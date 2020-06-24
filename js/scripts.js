@@ -20,7 +20,20 @@ var pokemonList = [
 	},
 ];
 
-console.log(pokemonList);
-document.write(pokemonList[0].pokemonName);
-document.write(pokemonList[1].pokemonName);
-document.write(pokemonList[2].pokemonName);
+for (let i = 0; i < pokemonList.length; i++) {
+	document.write(
+		' ' +
+			pokemonList[i].pokemonName +
+			' ' +
+			'(' +
+			'Height: ' +
+			pokemonList[i].pokemonHeight +
+			', ' +
+			'Type: ' +
+			pokemonList[i].type +
+			')'
+	);
+	if (pokemonList[i].pokemonHeight > 1) {
+		document.write(' - That is a huge pokemon!');
+	}
+}
