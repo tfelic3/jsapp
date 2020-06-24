@@ -2,21 +2,21 @@ var pokemonList = [
 	{
 		pokemonName: 'Pikachu',
 		pokemonHeight: 0.4,
-		type: 'electric',
-		weakness: 'ground',
+		type: 'Electric',
+		weakness: 'Ground',
 	},
 	{
 		pokemonName: 'Mewtwo',
 		pokemonHeight: 2,
-		type: 'psychic',
-		weakness: 'ghost',
+		type: 'Psychic',
+		weakness: 'Ghost',
 	},
 
 	{
 		pokemonName: 'Lugia',
 		pokemonHeight: 5.2,
-		type: 'flying',
-		weakness: 'rock',
+		type: 'Flying',
+		weakness: 'Rock',
 	},
 ];
 
@@ -31,9 +31,9 @@ for (let i = 0; i < pokemonList.length; i++) {
 			', ' +
 			'Type: ' +
 			pokemonList[i].type +
-			')'
+			')' + "<br>" 
 	);
 	if (pokemonList[i].pokemonHeight > 1) {
-		document.write(' - That is a huge pokemon!');
+		document.write(pokemonList[i].pokemonName + ' is a gigantic pokemon!' + "<br>") ;
 	}
 }
