@@ -21,25 +21,41 @@ var pokemonRepository = (function () {
 		},
 	];
 
+
+	function showDetails(pokemon){
+		console.log(pokemon);
+		}
+
+	function addListItem(pokemon) {
+		let pokemonList = document.querySelector('.pokemon-list');
+		var listItem = document.createElement('li');
+		var button = document.createElement('button');
+		button.textContent = pokemon.pokemonName;
+		button.classList.add('styling');
+		listItem.appendChild(button);
+		pokemonList.appendChild(listItem);
+		button.addEventListener('click', function(){
+			showDetails(pokemon);
+		});
+	}
+
+	
+
+	function add(pokemon) {
+		pokemonList.push(pokemon);
+	}
+
+	function getAll() {
+		return pokemonList;
+	}
+
 	return {
-		add: function (pokemon) {
-			if (typeof pokemon === "object"){
-			pokemonList.push(pokemon);
-			} else {(console.log("This is not a pokemon"))			
-		}},
-
-getAll: function(){
-	return pokemonList;
-}
-
+		add: add,
+		getAll: getAll,
+		addListItem: addListItem
 	};
-
 })();
 
-pokemonRepository.add ({pokemonName: "Blaise", pokemonHeight: 2.07, type: "Electric", Weakness: "Flying" });
-
-
-
-pokemonRepository.getAll().forEach(function(pokemon){
-document.write(pokemon.pokemonName + " " + "(Height: " + pokemon.pokemonHeight + ")" + " Type: " + pokemon.type + " Weakness: " + pokemon.weakness + "<br>")
-}) 
+pokemonRepository.getAll().forEach(function (pokemon) {
+	pokemonRepository.addListItem(pokemon);
+});
