@@ -38,9 +38,7 @@ li {
 }
 
 #modal-container.is-visible {
-  position: fixed;
-  display: block;
-  
+  position: fixed;  
   padding: 20px;
   box-sizing: border-box;
   top: 0;
@@ -58,7 +56,6 @@ li {
   /* this is used to center the modal */
   display: grid;
   text-align: center;
-  display: block;
 }
 
 .modal {
